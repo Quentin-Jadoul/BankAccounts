@@ -1,21 +1,12 @@
 // db.js
 const mysql = require('mysql');
 
-const db = mysql.createConnection({
-  host: 'your_database_host',
-  user: 'your_database_user',
-  password: 'your_database_password',
-  database: 'your_database_name',
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0
+var db = mysql.createConnection({
+  host: "localhost",
+  port: 3305,
+  user: "root",
+  password: "root",
 });
-
-// var db = mysql.createConnection({
-//   host: "localhost",
-//   user: "rpi2",
-//   password: "local",
-// });
 
 
 
