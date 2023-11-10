@@ -8,9 +8,6 @@ var db = mysql.createConnection({
   password: "root",
 });
 
-
-
-
 function executeQuery(query, callback) {
   db.connect(function(err) {
       if (err) throw err;
@@ -22,7 +19,6 @@ function executeQuery(query, callback) {
     });
 
 }
-
 
 executeQuery("CREATE DATABASE IF NOT EXISTS notesapp;", function(result) {
   // console.log(result);
@@ -44,4 +40,4 @@ db.query("CREATE TABLE IF NOT EXISTS notes (id INT AUTO_INCREMENT PRIMARY KEY, t
 });
 
 
-module.exports = pool;
+module.exports = db;

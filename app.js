@@ -1,15 +1,24 @@
 // Import express
 let express = require('express');
-// let session = require('express-session');
 let router = require('./routes');
 // Initialize the app
 let app = express();
+
+const jwt = require('jsonwebtoken');
+const cookieParser = require('cookie-parser');
+
+app.use(cookieParser());
+
 app.use(express.urlencoded({extended: true}));
-// app.use(session({
-//     secret: 'my secret',
-//     resave: false,
-//     saveUninitialized: true
-// }));
+
+app.set('view engine', 'hbs');
+
+const path = require('path');
+
+const publicDir = path.join(__dirname, './public');
+
+app.use(express.static(publicDir));
+
 // Send message for default URL
 app.use('/', router)
 // Setup server port
@@ -20,6 +29,8 @@ console.log('Server running on port ' + port);
 });
 //setting middleware
 app.use(express.static('public'));
+
+
 
 
 

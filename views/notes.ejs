@@ -4,8 +4,11 @@
     <title>Notes</title>
   </head>
   <body>
-    <h1>Notes</h1>
-    <ul>
-    </ul>
+    <h1>Users</h1>
+    Welcome to the user page
+    <button type="button" onclick="location.href='/admin'">Go to Admin Page</button>
+    <% if (typeof message !== 'undefined') { %>
+        <p><%= message %></p>
+      <% } %>
   </body>
 </html>

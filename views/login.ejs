@@ -41,13 +41,15 @@
 <body>
     <div class="container">
         <h1>Login</h1>
-        <label for="uname"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required>
+        <form action="/auth/login" method="POST">
+            <label for="username"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="username" required>
 
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>
 
-        <button type="submit">Login</button>
+            <button type="submit">Login</button>
+        </form>
         <label>No account? Register</label>
         <button type="button" onclick="location.href='/register'">Register</button>
     </div>
