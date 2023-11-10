@@ -20,9 +20,9 @@ const publicDir = path.join(__dirname, './public');
 app.use(express.static(publicDir));
 
 // Send message for default URL
-app.use('/', router)
+app.use('/note', router)
 // Setup server port
-let port = 8000;
+let port = 3001;
 // Launch app to listen to specified port
 app.listen(port, function () {
 console.log('Server running on port ' + port);

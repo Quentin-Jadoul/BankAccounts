@@ -1,12 +1,13 @@
 // db.js
 const mysql = require('mysql');
+require('dotenv').config();
 
 var db = mysql.createConnection({
-  host: "localhost",
-  port: 3305,
-  user: "root",
-  password: "root",
-});
+    host: "localhost",
+    user: "rpi2",
+    password: process.env.DB_PASSWORD,
+  });
+
 
 function executeQuery(query, callback) {
   db.connect(function(err) {
