@@ -2,11 +2,18 @@
 const mysql = require('mysql');
 require('dotenv').config();
 
+// var db = mysql.createConnection({
+//   host: "localhost",
+//   user: "rpi2",
+//   password: process.env.DB_PASSWORD,
+// });
+
 var db = mysql.createConnection({
-    host: "localhost",
-    user: "rpi2",
-    password: process.env.DB_PASSWORD,
-  });
+  host: "localhost",
+  user: "root",
+  password: "root"
+});
+
 
 
 function executeQuery(query, callback) {

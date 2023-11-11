@@ -1,8 +1,8 @@
 // Import express
 let express = require('express');
 let router = require('./routes');
-const https = require('https');
-const fs = require('fs');
+// const https = require('https');
+// const fs = require('fs');
 // Initialize the app
 let app = express();
 
@@ -21,11 +21,11 @@ const path = require('path');
 const publicDir = path.join(__dirname, './public');
 
 
-const options = {
-    key: fs.readFileSync('/home/rpi2/sudotest/website2/private.key'),
-    cert: fs.readFileSync('/home/rpi2/sudotest/website2/certificate.crt'),
-    passphrase: 'manuallyresurectprocesses'
-  };
+// const options = {
+//     key: fs.readFileSync('/home/rpi2/sudotest/website2/private.key'),
+//     cert: fs.readFileSync('/home/rpi2/sudotest/website2/certificate.crt'),
+//     passphrase: 'manuallyresurectprocesses'
+//   };
 
 
 
@@ -33,12 +33,13 @@ app.use(express.static(publicDir));
 
 // Send message for default URL
 app.use('/note', router)
-
-const server = https.createServer(options, app);
+let port = 3001;
+// const server = https.createServer(options, app);
+const server = app.listen(port);
 
 // Setup server port
-let port = 3001;
+
 // Launch app to listen to specified port
-server.listen(port, function () {
-console.log('Server running on port ' + port);
-});
+// server.listen(port, function () {
+// console.log('Server running on port ' + port);
+// });
